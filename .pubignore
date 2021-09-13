@@ -1,0 +1,8 @@
+screenshots
+docs
+.secret
+.secrets
+.vscode
+.idea
+.gitignore
+.pubignore
