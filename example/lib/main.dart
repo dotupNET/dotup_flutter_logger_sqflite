@@ -4,7 +4,7 @@ import 'dart:math';
 
 import 'package:dotup_dart_logger/dotup_dart_logger.dart';
 import 'package:dotup_flutter_logger/dotup_flutter_logger.dart';
-import 'package:dotup_flutter_logger_sqflite/dotup_flutter_logger_sqflite_writer.dart';
+import 'package:dotup_flutter_logger_sqflite/dotup_flutter_logger_sqflite.dart';
 import 'package:dotup_flutter_widgets/dotup_flutter_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
