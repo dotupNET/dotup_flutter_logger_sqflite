@@ -9,3 +9,7 @@
 ## 0.5.0
 
 * source code from dotup_flutter_logger exrtacted
+
+## 0.5.1
+
+* dotup_dart_logger: ^0.5.1
