@@ -5,3 +5,7 @@
 ## 0.2.0
 
 * SqLiteRepository readPaged({required int skip, required int take, String? orderBy})
+
+## 0.5.0
+
+* source code from dotup_flutter_logger exrtacted

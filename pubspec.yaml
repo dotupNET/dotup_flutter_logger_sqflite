@@ -1,6 +1,6 @@
 name: dotup_flutter_logger_sqflite
 description: SqfLite log writer for https://github.com/dotupNET/dotup_dart_logger
-version: 0.3.0
+version: 0.5.0
 homepage: https://dotup.de
 repository: https://github.com/dotupNET/dotup_flutter_logger_sqflite
 

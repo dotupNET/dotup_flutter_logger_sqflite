@@ -1,7 +1,9 @@
 screenshots
 docs
+/**/build
 .secret
 .secrets
+.env
 .vscode
 .idea
 .gitignore

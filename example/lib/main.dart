@@ -6,6 +6,7 @@ import 'package:dotup_dart_logger/dotup_dart_logger.dart';
 import 'package:dotup_flutter_logger/dotup_flutter_logger.dart';
 import 'package:dotup_flutter_logger_sqflite/dotup_flutter_logger_sqflite_writer.dart';
 import 'package:dotup_flutter_widgets/dotup_flutter_widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
@@ -45,6 +46,7 @@ class LoggerDemoApp extends StatelessWidget {
     return Consumer<ThemeProvider>(
       builder: (context, themeProvider, child) {
         return MaterialApp(
+          scrollBehavior: TouchAndMouseScrollBehavior(),
           debugShowCheckedModeBanner: false,
           title: 'dotup.de Logger Demo',
           theme: themeProvider.lightTheme,
@@ -209,4 +211,14 @@ class MyException implements Exception {
     if (message == null) return 'Exception';
     return 'Exception: $message';
   }
+}
+
+class TouchAndMouseScrollBehavior extends MaterialScrollBehavior {
+  // Override behavior methods and getters like dragDevices
+  @override
+  Set<PointerDeviceKind> get dragDevices => { 
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+    // etc.
+  };
 }
