@@ -13,3 +13,7 @@
 ## 0.5.1
 
 * dotup_dart_logger: ^0.5.1
+
+## 0.5.2
+
+* example: dotup_flutter_logger: ^0.5.3
