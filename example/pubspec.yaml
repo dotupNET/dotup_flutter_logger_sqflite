@@ -30,8 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   sqflite: ^2.0.0+3
   sqflite_common_ffi: ^2.0.0+1
-  dotup_dart_logger: ^0.5.1
-  dotup_flutter_logger: ^0.5.3
+  dotup_dart_logger: ^0.6.0
+  dotup_flutter_logger: ^0.6.3
 
 
   dotup_flutter_logger_sqflite:
