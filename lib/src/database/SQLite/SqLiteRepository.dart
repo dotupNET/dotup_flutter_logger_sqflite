@@ -8,8 +8,8 @@ import '../Entity.dart';
 import 'models/SqLiteColumnDescriptor.dart';
 import 'models/TableDescriptor.dart';
 
-typedef Map<String, Object?> ToMap<T>(T value);
-typedef T FromMap<T>(Map<String, Object?> value);
+typedef ToMap<T> = Map<String, Object?> Function(T value);
+typedef FromMap<T> = T Function(Map<String, Object?> value);
 
 abstract class SqLiteRepository<T extends Entity> {
   static final Id = SqLiteColumnDescriptor.string('id', primaryKey: true);
@@ -31,18 +31,14 @@ abstract class SqLiteRepository<T extends Entity> {
   late final List<String> _allColumnNames;
 
   SqLiteRepository({
-    required DatabaseExecutor db,
+    required this.db,
     // required String tableName,
     // required List<SqLiteColumnDescriptor> specificColumns,
-    required ToMap<T> toMap,
-    required FromMap<T> fromMap,
+    required this.toMap,
+    required this.fromMap,
     required TableDescriptor tableDescriptor,
-    String? databaseAlias,
+    this.databaseAlias,
   }) {
-    this.db = db;
-    this.databaseAlias = databaseAlias;
-    this.toMap = toMap;
-    this.fromMap = fromMap;
     _tableName = tableDescriptor.getTableName();
 
     _tableDescriptor = TableDescriptor(
@@ -180,8 +176,8 @@ abstract class SqLiteRepository<T extends Entity> {
       whereArgs: whereArgs,
     );
 
-    final result = await Future.wait(maps.map((e) async => await fromMap(e)));
-    return result;
+    final result = maps.map((e) => fromMap(e));
+    return Future.value(result.toList());
   }
 
   Future<int> update(T item) async {

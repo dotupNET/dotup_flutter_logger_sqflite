@@ -13,9 +13,8 @@ final stringNullType = typeOfT<String?>();
 final dateTimeType = typeOfT<DateTime>();
 final dateTimeNullType = typeOfT<DateTime?>();
 
-
-typedef T RepositoryFactoryMethod<T>(SqLiteDatabase db);
-typedef T SqLiteRepositoryFactoryMethod<T>(DatabaseExecutor databaseExecutor);
+typedef RepositoryFactoryMethod<T> = T Function(SqLiteDatabase db);
+typedef SqLiteRepositoryFactoryMethod<T> = T Function(DatabaseExecutor databaseExecutor);
 
 extension IterableExtension<T> on Iterable<T> {
   T? firstWhereOrNull(bool Function(T element) test) {
@@ -27,7 +26,6 @@ extension IterableExtension<T> on Iterable<T> {
     return null;
   }
 }
-
 
 String? nullOrString(Object? value) {
   if (value == null) {

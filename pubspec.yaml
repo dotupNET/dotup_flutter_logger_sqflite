@@ -1,25 +1,26 @@
 name: dotup_flutter_logger_sqflite
 description: SqfLite log writer for https://github.com/dotupNET/dotup_dart_logger
-version: 0.6.0
+version: 1.0.0
 homepage: https://dotup.de
 repository: https://github.com/dotupNET/dotup_flutter_logger_sqflite
 
-
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=1.17.0"
-
+  sdk: ">=2.18.0 <4.0.0"
+  flutter: ">=3.0.0"
+  
 dependencies:
   flutter:
     sdk: flutter
-  dotup_dart_logger: ^0.6.0
-  sqflite: ^2.0.0+3
-  sqflite_common_ffi: ^2.0.0+1
-  uuid: ^3.0.4
-  sqflite_common: ^2.0.0+2
+
+  dotup_dart_logger: ^1.0.0
+  sqflite: ^2.3.0
+  sqflite_common_ffi: ^2.3.0+2
+  uuid: ^3.0.7
+  sqflite_common: ^2.5.0
 
 dev_dependencies:
-  flutter_lints: ^1.0.4
+  flutter_lints: ^2.0.3
+
   flutter_test:
     sdk: flutter
 

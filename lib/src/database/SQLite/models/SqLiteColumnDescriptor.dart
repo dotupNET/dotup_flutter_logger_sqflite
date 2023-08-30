@@ -14,10 +14,8 @@ class SqLiteColumnDescriptor {
     required this.nullable,
     this.displayName,
     String? exportName,
-    bool primaryKey = false,
-  }) {
-    this.primaryKey = primaryKey;
-  }
+    this.primaryKey = false,
+  });
 
   String getAliasOrName() {
     return tempAlias ?? columnName;

@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:async';
+
 import 'package:sqflite/sqflite.dart';
 
 import 'LoggerMapper.dart';
@@ -44,26 +45,26 @@ class LoggerRepository extends SqLiteRepository<LoggerEntity> {
   ];
 
   @override
-  FutureOr<void> onCreate(DatabaseExecutor dbe, int version) async {
+  FutureOr<void> onCreate(DatabaseExecutor db, int version) async {
     final sql = SqlGenerator.getCreateTableStatement(tableDescriptor);
 
     switch (version) {
       case 1:
-        return await dbe.execute(sql);
+        return await db.execute(sql);
 
       default:
     }
   }
 
   @override
-  FutureOr<void> onUpgrade(DatabaseExecutor dbe, int oldVersion, int newVersion) {
+  FutureOr<void> onUpgrade(DatabaseExecutor db, int oldVersion, int newVersion) {
     switch (oldVersion) {
       case 1:
-        _upgradeFromV1(dbe, newVersion);
+        _upgradeFromV1(db, newVersion);
         break;
       default:
     }
   }
 
-  Future<void> _upgradeFromV1(DatabaseExecutor dbe, int newVersion) async {}
+  Future<void> _upgradeFromV1(DatabaseExecutor db, int newVersion) async {}
 }

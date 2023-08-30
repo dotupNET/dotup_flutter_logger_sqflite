@@ -21,3 +21,7 @@
 ## 0.6.0
 
 * dotup_dart_logger: ^0.6.0
+
+## 1.0.0
+
+* Change: Package update

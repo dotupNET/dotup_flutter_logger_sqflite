@@ -18,6 +18,7 @@ class SqLiteEntityController<T extends Entity> with ChangeNotifier implements IC
     return _items;
   }
 
+  @override
   Future<int> filter(SqLiteFilter filter) async {
     final where = filter.getWhere();
     final whereArgs = filter.getWhereArgs();
@@ -35,6 +36,7 @@ class SqLiteEntityController<T extends Entity> with ChangeNotifier implements IC
     return true;
   }
 
+  @override
   Future<int> loadAll() async {
     _items = await _repository.readAll();
     notifyListeners();
